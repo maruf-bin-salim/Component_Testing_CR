@@ -69,12 +69,14 @@ export default function useProducts(selectedCategory) {
   }, [page]);
 
   useEffect(() => {
-    // // calls the next js api endpoint with product_id query param
-    // getProducts().then((fetched) => {
-    //   if (fetched.results) {
-    //     setProducts(fetched.results);
-    //   }
-    // });
+    if (true || selectedCategory !== "all") {
+      // calls the next js api endpoint with product_id query param
+      getProducts().then((fetched) => {
+        if (fetched.results) {
+          setProducts(fetched.results);
+        }
+      });
+    }
   }, [selectedCategory]);
 
   return {

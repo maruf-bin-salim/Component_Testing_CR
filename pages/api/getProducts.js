@@ -2,12 +2,13 @@ let products = [
   {
     product_id: "1",
     name: "Shirt",
-    base_image: "https://example.com/image.jpg",
+    base_image: "https://picsum.photos/200",
+    category: "electronics",
 
     images: [
       {
         color_code: "#dbdbdb",
-        image: "https://example.com/image.jpg",
+        image: "https://picsum.photos/200",
       },
     ],
   },
@@ -15,12 +16,27 @@ let products = [
   {
     product_id: "2",
     name: "ben 10 figure",
-    base_image: "https://example.com/image.jpg",
+    base_image: "https://picsum.photos/200",
+    category: "toys",
 
     images: [
       {
         color_code: "#dbdbdb",
-        image: "https://example.com/image.jpg",
+        image: "https://picsum.photos/200",
+      },
+    ],
+  },
+
+  {
+    product_id: "3",
+    name: "star wars figure",
+    base_image: "https://picsum.photos/200",
+    category: "toys",
+
+    images: [
+      {
+        color_code: "#dbdbdb",
+        image: "https://picsum.photos/200",
       },
     ],
   },
