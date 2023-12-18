@@ -1,13 +1,34 @@
 import { useEffect, useState } from "react";
 
-export default function useProducts(page, page_size) {
+export default function useProducts() {
+
+    const [page, setPage] = useState(1);
+    const page_size = 20;
 
     const [products, setProducts] = useState([]);
+
     // calls the next js api endpoint with page, paze_size query params
     async function getProducts() {
         let products = await fetch(`/api/getProducts?page=${page}&page_size=${page_size}`);
         let JSON_Products = await products.json();
         return JSON_Products;
+    }
+
+
+    function goToNextPage() {
+        if (products.meta.total_count > page * page_size) {
+            setPage(page + 1);
+        }
+    }
+
+    function goToPreviousPage() {
+        if (page > 1) {
+            setPage(page - 1);
+        }
+    }
+
+    function goToPage(page) {
+        setPage(page);
     }
 
     useEffect(() => {
@@ -19,6 +40,13 @@ export default function useProducts(page, page_size) {
         });
 
 
-    }, [])
+    }, [page])
 
+
+    return {
+        products,
+        goToNextPage,
+        goToPreviousPage,
+        goToPage
+    }
 }
