@@ -3,11 +3,13 @@ import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Product from "./Product";
 import { PAGE_MODES } from "@/data/enums";
+import { categories } from "@/data/categories";
+
 
 export default function ProductPicker() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchKeyword, setSearchKeyword] = useState("");
-  const { products, possibleToLoadMore, categories, setPage, isLoading } =
+  const { products, possibleToLoadMore, setPage, isLoading } =
     useProducts(selectedCategory);
   const [pageMode, setPageMode] = useState(PAGE_MODES.ALL_PRODUCTS);
   const [selectedProduct, setSelectedProduct] = useState(null);
