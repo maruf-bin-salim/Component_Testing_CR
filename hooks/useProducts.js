@@ -31,6 +31,8 @@ export default function useProducts(selectedCategory) {
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
 
+  const [possibleToLoadMore, setPossibleToLoadMore] = useState(false);
+
   // calls the next js api endpoint with page, paze_size query params
   async function getProducts(page, page_size) {
     setIsLoading(true);
@@ -55,12 +57,20 @@ export default function useProducts(selectedCategory) {
   useEffect(() => {
     let MAX_PAGE = Math.ceil(totalCount / page_size);
     console.log("page", page, "MAX_PAGE", MAX_PAGE);
+    let loadPossibility = (page <= MAX_PAGE) && !isLoading;
+    setPossibleToLoadMore(loadPossibility);
+
     if (page <= MAX_PAGE) {
       appendToResults();
+    } else {
+      setPage(MAX_PAGE + 1);
     }
   }, [page]);
 
   useEffect(() => {
+    if (page > 0) {
+      setProducts([]);
+    }
     setPage(0);
   }, [selectedCategory]);
 
@@ -70,5 +80,6 @@ export default function useProducts(selectedCategory) {
     isLoading,
     page,
     setPage,
+    possibleToLoadMore,
   };
 }

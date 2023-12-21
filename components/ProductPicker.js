@@ -7,7 +7,7 @@ import { PAGE_MODES } from "@/data/enums";
 export default function ProductPicker() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchKeyword, setSearchKeyword] = useState("");
-  const { products, page, categories, setPage, isLoading } =
+  const { products, possibleToLoadMore, categories, setPage, isLoading } =
     useProducts(selectedCategory);
   const [pageMode, setPageMode] = useState(PAGE_MODES.ALL_PRODUCTS);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -26,6 +26,14 @@ export default function ProductPicker() {
       }
     }
   };
+
+  function getProductCount() {
+    return products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(searchKeyword.toLowerCase()) &&
+        (product.category === selectedCategory || selectedCategory === "all"),
+    ).length;
+  }
 
   useEffect(() => {
     const scrollTrackableElement = scrollTrackerRef.current;
@@ -77,6 +85,7 @@ export default function ProductPicker() {
           <div>
             <p className="">Find a Product</p>
             <select
+              value={selectedCategory}
               onChange={(e) => {
                 setSelectedCategory(e.target.value);
               }}
@@ -94,6 +103,7 @@ export default function ProductPicker() {
               placeholder="Type to search ..."
               type="text"
               className={`block w-full border border-t-0 border-gray-300 bg-white p-3 text-sm`}
+              value={searchKeyword}
               onChange={(e) => {
                 setSearchKeyword(e.target.value);
               }}
@@ -101,7 +111,7 @@ export default function ProductPicker() {
           </div>
 
           <div
-            className={`flex-1 overflow-y-scroll rounded-b-lg border border-gray-300`}
+            className={`overflow-y-scroll rounded-b-lg border border-gray-300`}
             ref={scrollTrackerRef}
           >
             {products
@@ -122,6 +132,19 @@ export default function ProductPicker() {
                   setSelectedProduct={setSelectedProduct}
                 />
               ))}
+            {possibleToLoadMore &&
+              !isLoading &&
+              getProductCount() !== 0 &&
+              getProductCount() < 7 && (
+                <p
+                  onClick={() => {
+                    setPage((page) => page + 1);
+                  }}
+                  className="m-2 cursor-pointer p-4 text-center"
+                >
+                  Load More ...{" "}
+                </p>
+              )}
           </div>
           <div className="min-h-[100px]">
             {isLoading && <p className="m-2 p-4 text-center">Loading ...</p>}

@@ -84,20 +84,6 @@ let products = [
   },
 
   {
-    product_id: "7",
-    name: "pant",
-    base_image: "https://picsum.photos/200",
-    category: "clothing",
-
-    images: [
-      {
-        color_code: "#dbdbdb",
-        image: "https://picsum.photos/200",
-      },
-    ],
-  },
-
-  {
     product_id: "8",
     name: "t-shirt",
     base_image: "https://picsum.photos/200",
@@ -312,6 +298,20 @@ let products = [
     name: "glass cleaner",
     base_image: "https://picsum.photos/200",
     category: "home",
+
+    images: [
+      {
+        color_code: "#dbdbdb",
+        image: "https://picsum.photos/200",
+      },
+    ],
+  },
+
+  {
+    product_id: "7",
+    name: "pant",
+    base_image: "https://picsum.photos/200",
+    category: "clothing",
 
     images: [
       {
