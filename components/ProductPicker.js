@@ -33,7 +33,6 @@ export default function ProductPicker() {
 
     if (scrollTrackableElement) {
       scrollTrackableElement.addEventListener("scroll", onScroll);
-
       // Clean-up
       return () => {
         scrollTrackableElement.removeEventListener("scroll", onScroll);
@@ -62,6 +61,19 @@ export default function ProductPicker() {
           setSelectedProduct={setSelectedProduct}
           scrollTrackerRef={scrollTrackerRef}
         />
+      )}
+
+      {pageMode === PAGE_MODES.PRODUCT_DETAILS && selectedProduct && (
+        <div className="flex h-[max-content] w-full">
+          <img
+            className="m-auto"
+            src="/product_details.png"
+            alt="Product Details"
+            height={10}
+            width={200}
+          />
+          {/* {page}  */}
+        </div>
       )}
 
       {/*  */}
