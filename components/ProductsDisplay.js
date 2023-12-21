@@ -34,6 +34,7 @@ export default function ProductsDisplay({
           value={selectedCategory}
           onChange={(e) => {
             setSelectedCategory(e.target.value);
+            setPage(0);
           }}
           id="categories"
           className={`mt-2 block w-full rounded-t-lg border border-gray-300 bg-white p-3 text-sm`}

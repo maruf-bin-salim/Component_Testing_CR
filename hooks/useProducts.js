@@ -7,6 +7,7 @@ export default function useProducts(selectedCategory) {
 
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [maxPage, setMaxPage] = useState(10000); // Math.ceil(totalCount / page_size) - 1
 
   const [possibleToLoadMore, setPossibleToLoadMore] = useState(false);
 
@@ -18,6 +19,7 @@ export default function useProducts(selectedCategory) {
       `/api/getProducts?page=${page}&page_size=${page_size}`,
     );
     let JSON_Products = await products.json();
+    setMaxPage(Math.ceil(parseInt(JSON_Products.meta.total_count) / page_size));
     setIsLoading(false);
     return JSON_Products;
   }
@@ -44,19 +46,16 @@ export default function useProducts(selectedCategory) {
 
     if (page <= MAX_PAGE) {
       appendToResults();
-    } else {
-      setPage(MAX_PAGE + 1);
     }
   }, [page]);
 
-  useEffect(() => {
-    setPage(0); // reset page to 0 when selectedCategory changes
-  }, [selectedCategory]);
+
 
   return {
     products,
     isLoading,
     page,
+    maxPage,
     setPage,
     possibleToLoadMore,
   };

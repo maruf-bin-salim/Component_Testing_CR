@@ -7,7 +7,7 @@ import ProductsDisplay from "./ProductsDisplay";
 export default function ProductPicker() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchKeyword, setSearchKeyword] = useState("");
-  const { products, possibleToLoadMore, setPage, isLoading, page } =
+  const { products, possibleToLoadMore, setPage, isLoading, page, maxPage } =
     useProducts(selectedCategory);
   const [pageMode, setPageMode] = useState(PAGE_MODES.ALL_PRODUCTS);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -22,7 +22,10 @@ export default function ProductPicker() {
 
       if (isNearBottom) {
         console.log("Reached bottom");
-        setPage((page) => page + 1);
+        console.log("page", page, "maxPage", maxPage);
+        if (page < maxPage) {
+          setPage((page) => page + 1);
+        }
       }
     }
   };
