@@ -24,15 +24,17 @@ const categories = [
 ];
 
 export default function useProducts(selectedCategory) {
-  const [page, setPage] = useState(1);
-  const page_size = 20;
+  const [page, setPage] = useState(0);
+  const page_size = 10; // min 10
   const [isLoading, setIsLoading] = useState(false);
 
   const [products, setProducts] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
 
   // calls the next js api endpoint with page, paze_size query params
-  async function getProducts() {
+  async function getProducts(page, page_size) {
     setIsLoading(true);
+    console.log("fetching products for page", page, "page_size", page_size);
     let products = await fetch(
       `/api/getProducts?page=${page}&page_size=${page_size}`,
     );
@@ -41,51 +43,32 @@ export default function useProducts(selectedCategory) {
     return JSON_Products;
   }
 
-  function goToNextPage() {
-    if (products.meta.total_count > page * page_size) {
-      setPage(page + 1);
-    }
-  }
-
-  function goToPreviousPage() {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  }
-
-  function appendToResults(page) {
-    if (products.meta.total_count > page * page_size) {
-      setPage(page + 1);
+  async function appendToResults() {
+    let fetched = await getProducts(page + 1, page_size);
+    console.log("fetched", fetched);
+    if (fetched.results) {
+      setProducts((products) => [...products, ...fetched.results]);
+      setTotalCount(parseInt(fetched.meta.total_count));
     }
   }
 
   useEffect(() => {
-    // calls the next js api endpoint with product_id query param
-    getProducts().then((fetched) => {
-      if (fetched.results) {
-        setProducts([...products, ...fetched.results]);
-      }
-    });
+    let MAX_PAGE = Math.ceil(totalCount / page_size);
+    console.log("page", page, "MAX_PAGE", MAX_PAGE);
+    if (page <= MAX_PAGE) {
+      appendToResults();
+    }
   }, [page]);
 
   useEffect(() => {
-    if (true || selectedCategory !== "all") {
-      // calls the next js api endpoint with product_id query param
-      getProducts().then((fetched) => {
-        if (fetched.results) {
-          setProducts(fetched.results);
-        }
-      });
-    }
+    setPage(0);
   }, [selectedCategory]);
 
   return {
     products,
     categories,
     isLoading,
-
-    goToNextPage,
-    goToPreviousPage,
-    appendToResults,
+    page,
+    setPage,
   };
 }

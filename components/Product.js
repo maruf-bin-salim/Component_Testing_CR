@@ -1,13 +1,14 @@
-import Image from "next/image";
+import { PAGE_MODES } from "@/data/enums";
 
-export default function Product({ product, setSelectedProduct, setPageMode }) {
+
+export default function Product({index, product, setSelectedProduct, setPageMode }) {
   return (
     <div
       onClick={() => {
-        setPageMode("PRODUCT_DETAILS");
+        setPageMode(PAGE_MODES.PRODUCT_DETAILS);
         setSelectedProduct(product);
       }}
-      className={`flex cursor-pointer items-center gap-4 border-b border-gray-400 bg-gray-300 p-4`}
+      className={`flex cursor-pointer items-center gap-4 border-b border-[#b1b1b180] bg-[#F5F5F5] p-4`}
     >
       <img
         className={`h-18 w-16`}
@@ -16,7 +17,7 @@ export default function Product({ product, setSelectedProduct, setPageMode }) {
         height={50}
         width={50}
       />
-      <p>{product.name}</p>
+      <p>{`${index+1} . ${product.name}`}</p>
     </div>
   );
 }
