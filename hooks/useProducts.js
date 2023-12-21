@@ -36,7 +36,7 @@ export default function useProducts(selectedCategory) {
   useEffect(() => {
     let MAX_PAGE = Math.ceil(totalCount / page_size);
     console.log("page", page, "MAX_PAGE", MAX_PAGE);
-    let loadPossibility = (page <= MAX_PAGE) && !isLoading;
+    let loadPossibility = (page + 1 <= MAX_PAGE) && !isLoading;
     setPossibleToLoadMore(loadPossibility);
 
     if (page <= MAX_PAGE) {
