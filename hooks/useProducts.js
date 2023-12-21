@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 
-
-
 export default function useProducts(selectedCategory) {
   const [page, setPage] = useState(0);
   const page_size = 10; // min 10
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [products, setProducts] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -28,7 +26,12 @@ export default function useProducts(selectedCategory) {
     let fetched = await getProducts(page + 1, page_size);
     console.log("fetched", fetched);
     if (fetched.results) {
-      setProducts((products) => [...products, ...fetched.results]);
+      if (page == 0) {
+        setPossibleToLoadMore(true);
+        setProducts(fetched.results);
+      } else {
+        setProducts((products) => [...products, ...fetched.results]);
+      }
       setTotalCount(parseInt(fetched.meta.total_count));
     }
   }
@@ -36,7 +39,7 @@ export default function useProducts(selectedCategory) {
   useEffect(() => {
     let MAX_PAGE = Math.ceil(totalCount / page_size);
     console.log("page", page, "MAX_PAGE", MAX_PAGE);
-    let loadPossibility = (page + 1 <= MAX_PAGE) && !isLoading;
+    let loadPossibility = page + 1 <= MAX_PAGE && !isLoading;
     setPossibleToLoadMore(loadPossibility);
 
     if (page <= MAX_PAGE) {
@@ -47,11 +50,7 @@ export default function useProducts(selectedCategory) {
   }, [page]);
 
   useEffect(() => {
-    if (page > 0) {
-      setProducts([]);
-    }
-    setPossibleToLoadMore(true);
-    setPage(0);
+    setPage(0); // reset page to 0 when selectedCategory changes
   }, [selectedCategory]);
 
   return {
