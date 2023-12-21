@@ -50,6 +50,7 @@ export default function useProducts(selectedCategory) {
     if (page > 0) {
       setProducts([]);
     }
+    setPossibleToLoadMore(true);
     setPage(0);
   }, [selectedCategory]);
 

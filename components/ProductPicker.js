@@ -4,11 +4,10 @@ import { PAGE_MODES } from "@/data/enums";
 import Header from "./Header";
 import ProductsDisplay from "./ProductsDisplay";
 
-
 export default function ProductPicker() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchKeyword, setSearchKeyword] = useState("");
-  const { products, possibleToLoadMore, setPage, isLoading } =
+  const { products, possibleToLoadMore, setPage, isLoading, page } =
     useProducts(selectedCategory);
   const [pageMode, setPageMode] = useState(PAGE_MODES.ALL_PRODUCTS);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -45,10 +44,10 @@ export default function ProductPicker() {
       className={`overflow-y-none m-4 ml-auto mr-auto mt-0 flex h-[100%] w-[90vw] flex-col overflow-y-hidden p-4 lg:w-[50vw]`}
     >
       <Header />
-      
 
       {pageMode === PAGE_MODES.ALL_PRODUCTS && (
         <ProductsDisplay
+          page={page}
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
           searchKeyword={searchKeyword}
