@@ -79,12 +79,24 @@ export default function ProductsDisplay({
               setSelectedProduct={setSelectedProduct}
             />
           ))}
+        {/* for pc */}
         {possibleToLoadMore && !isLoading && getProductCount() < 7 && (
           <p
             onClick={() => {
               setPage((page) => page + 1);
             }}
-            className="m-2 cursor-pointer p-4 text-center"
+            className="m-2 hidden cursor-pointer p-4 text-center lg:block"
+          >
+            {"Click To Load More"}
+          </p>
+        )}
+        {/* for phone */}
+        {possibleToLoadMore && (
+          <p
+            className="m-2 block p-4 text-center lg:hidden"
+            onClick={() => {
+              setPage((page) => page + 1);
+            }}
           >
             {"Click To Load More"}
           </p>
