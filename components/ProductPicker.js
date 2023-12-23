@@ -66,15 +66,51 @@ export default function ProductPicker() {
       )}
 
       {pageMode === PAGE_MODES.PRODUCT_DETAILS && selectedProduct && (
-        <div className="flex h-[max-content] w-full">
-          <img
-            className="m-auto"
-            src="/product_details.png"
-            alt="Product Details"
-            height={10}
-            width={200}
-          />
-          {/* {page}  */}
+        <div className="mt-4 flex h-[90%] w-full flex-col">
+          <div>
+            <p className="mt-8">Select A Product Color</p>
+          </div>
+          <div className="scrollbar-hidden flex flex-[0.9] flex-col overflow-y-scroll bg-red-500">
+            {/* top portion */}
+            <div className="flex min-h-[max-content] p-2">
+              <div className="flex flex-1 flex-col">
+                <img
+                  src="/back.png"
+                  alt=""
+                  className="w-[20px] cursor-pointer lg:w-[30px]"
+                  onClick={() => {
+                    setPageMode(PAGE_MODES.ALL_PRODUCTS);
+                    setSelectedProduct(null);
+                  }}
+                />
+
+                <img
+                  src="/pick_product.png"
+                  className="m-auto w-[40%] min-w-[100px]"
+                />
+              </div>
+
+              <div className="flex flex-1 flex-col bg-green-200">hey</div>
+            </div>
+
+            <div className="flex bg-red-700 p-2 flex-wrap">
+              {
+                // create a 20 size arrat and map it
+
+                selectedProduct?.images?.map((current, index) => (
+                  <div
+                    className="m-2 bg-blue-500"
+                    style={{
+                      backgroundColor: current.color_code,
+                      width: "20px",
+                      height: "20px",
+                    }}
+                  >
+                  </div>
+                ))
+              }
+            </div>
+          </div>
         </div>
       )}
 

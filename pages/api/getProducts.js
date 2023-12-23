@@ -4,10 +4,186 @@ let products = [
     name: "car toy",
     base_image: "https://picsum.photos/200",
     category: "electronics",
+    brand: "toyota",
 
     images: [
       {
-        color_code: "#dbdbdb",
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "green",
+        image: "https://picsum.photos/200",
+      },
+
+      {
+        color_code: "yellow",
         image: "https://picsum.photos/200",
       },
     ],
@@ -18,6 +194,7 @@ let products = [
     name: "ben 10 figure",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "ben 10",
 
     images: [
       {
@@ -32,6 +209,7 @@ let products = [
     name: "star wars figure",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "star wars",
 
     images: [
       {
@@ -46,6 +224,7 @@ let products = [
     name: "bucket",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -60,6 +239,7 @@ let products = [
     name: "scrub brush",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -74,6 +254,7 @@ let products = [
     name: "shirt",
     base_image: "https://picsum.photos/200",
     category: "clothing",
+    brand: "wallmart",
 
     images: [
       {
@@ -88,6 +269,7 @@ let products = [
     name: "t-shirt",
     base_image: "https://picsum.photos/200",
     category: "clothing",
+    brand: "wallmart",
 
     images: [
       {
@@ -102,6 +284,7 @@ let products = [
     name: "sweatshirt",
     base_image: "https://picsum.photos/200",
     category: "clothing",
+    brand: "wallmart",
 
     images: [
       {
@@ -116,6 +299,7 @@ let products = [
     name: "jacket",
     base_image: "https://picsum.photos/200",
     category: "clothing",
+    brand: "nike",
 
     images: [
       {
@@ -130,6 +314,7 @@ let products = [
     name: "air conditioner",
     base_image: "https://picsum.photos/200",
     category: "electronics",
+    brand: "singer",
 
     images: [
       {
@@ -144,6 +329,7 @@ let products = [
     name: "bread maker",
     base_image: "https://picsum.photos/200",
     category: "electronics",
+    brand: "singer",
 
     images: [
       {
@@ -158,6 +344,7 @@ let products = [
     name: "bulb",
     base_image: "https://picsum.photos/200",
     category: "electronics",
+    brand: "lg",
 
     images: [
       {
@@ -172,6 +359,7 @@ let products = [
     name: "blender",
     base_image: "https://picsum.photos/200",
     category: "electronics",
+    brand: "lg",
 
     images: [
       {
@@ -186,6 +374,7 @@ let products = [
     name: "balls",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -200,6 +389,7 @@ let products = [
     name: "ball pits",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -214,6 +404,7 @@ let products = [
     name: "cars",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -228,6 +419,7 @@ let products = [
     name: "boats",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -242,6 +434,7 @@ let products = [
     name: "bubbles",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -256,6 +449,7 @@ let products = [
     name: "balloons",
     base_image: "https://picsum.photos/200",
     category: "toys",
+    brand: "wallmart",
 
     images: [
       {
@@ -270,6 +464,7 @@ let products = [
     name: "toilet brush",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -284,6 +479,7 @@ let products = [
     name: "broom",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -298,6 +494,7 @@ let products = [
     name: "glass cleaner",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -312,6 +509,7 @@ let products = [
     name: "pant",
     base_image: "https://picsum.photos/200",
     category: "clothing",
+    brand: "nike",
 
     images: [
       {
@@ -326,6 +524,7 @@ let products = [
     name: "mop",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {
@@ -340,6 +539,7 @@ let products = [
     name: "dustpan",
     base_image: "https://picsum.photos/200",
     category: "home",
+    brand: "wallmart",
 
     images: [
       {

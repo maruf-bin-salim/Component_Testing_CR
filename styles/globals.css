@@ -10,7 +10,18 @@
   }
 }
 
-html, body, #__next {
+html,
+body,
+#__next {
   height: 100%;
   width: 100%;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
