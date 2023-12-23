@@ -91,7 +91,7 @@ export default function ProductsDisplay({
           </p>
         )}
         {/* for phone */}
-        {possibleToLoadMore && (
+        {possibleToLoadMore && !isLoading && (
           <p
             className="m-2 block p-4 text-center lg:hidden"
             onClick={() => {
