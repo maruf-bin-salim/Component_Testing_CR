@@ -78,7 +78,6 @@ export default function ColorPicker({
             onClick={() => {
               setSelectedColor(null);
               setPageMode(PAGE_MODES.PRODUCT_CHECKOUT);
-              setSelectedProduct(null);
             }}
             className="text-[#a1b5ff] cursor-pointer"
           >
