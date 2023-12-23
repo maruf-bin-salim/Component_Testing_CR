@@ -66,11 +66,11 @@ export default function ProductPicker() {
       )}
 
       {pageMode === PAGE_MODES.PRODUCT_DETAILS && selectedProduct && (
-        <div className="mt-4 flex h-[90%] w-full flex-col">
+        <div className="mt-4 flex h-[min-content] max-h-[90%] w-full flex-col">
           <div>
             <p className="mt-8">Select A Product Color</p>
           </div>
-          <div className="scrollbar-hidden flex flex-[0.9] flex-col overflow-y-scroll bg-red-500">
+          <div className="scrollbar-hidden flex flex-[1] flex-col overflow-y-scroll bg-[#F5F5F5]">
             {/* top portion */}
             <div className="flex min-h-[max-content] p-2">
               <div className="flex flex-1 flex-col">
@@ -90,25 +90,37 @@ export default function ProductPicker() {
                 />
               </div>
 
-              <div className="flex flex-1 flex-col bg-green-200">hey</div>
+              <div className="flex flex-col flex-1 justify-center">
+                <h1 className="text-xl font-bold">{selectedProduct.brand}</h1>
+                <h2 className="">{selectedProduct.name}</h2>
+              </div>
             </div>
 
-            <div className="flex bg-red-700 p-2 flex-wrap">
+            <div className="flex  flex-wrap p-4">
               {
                 // create a 20 size arrat and map it
 
                 selectedProduct?.images?.map((current, index) => (
                   <div
-                    className="m-2 bg-blue-500"
+                    key={index}
+                    className="m-1 bg-blue-500"
                     style={{
                       backgroundColor: current.color_code,
                       width: "20px",
                       height: "20px",
                     }}
-                  >
-                  </div>
+                  ></div>
                 ))
               }
+            </div>
+            <div className="flex flex-col w-[100%] p-4">
+              <button className="rounded-xl bg-[#a1b5ff] p-2 mb-2 text-white">
+                Next
+              </button>
+
+              <p className="text-[#a1b5ff]">
+                Maybe Later
+              </p>
             </div>
           </div>
         </div>

@@ -7,185 +7,26 @@ let products = [
     brand: "toyota",
 
     images: [
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "green",
-        image: "https://picsum.photos/200",
-      },
-
-      {
-        color_code: "yellow",
-        image: "https://picsum.photos/200",
-      },
+      { color_code: "#3A7D44", image: "https://picsum.photos/200" },
+      { color_code: "#C78C3D", image: "https://picsum.photos/200" },
+      { color_code: "#56D9F0", image: "https://picsum.photos/200" },
+      { color_code: "#BF24A3", image: "https://picsum.photos/200" },
+      { color_code: "#6F9D15", image: "https://picsum.photos/200" },
+      { color_code: "#B9538B", image: "https://picsum.photos/200" },
+      { color_code: "#6C89C2", image: "https://picsum.photos/200" },
+      { color_code: "#C8A663", image: "https://picsum.photos/200" },
+      { color_code: "#7E5A1E", image: "https://picsum.photos/200" },
+      { color_code: "#2D79E1", image: "https://picsum.photos/200" },
+      { color_code: "#5D7D42", image: "https://picsum.photos/200" },
+      { color_code: "#CB34D3", image: "https://picsum.photos/200" },
+      { color_code: "#5BDD7A", image: "https://picsum.photos/200" },
+      { color_code: "#839D3F", image: "https://picsum.photos/200" },
+      { color_code: "#3B8D96", image: "https://picsum.photos/200" },
+      { color_code: "#D1A51A", image: "https://picsum.photos/200" },
+      { color_code: "#A54076", image: "https://picsum.photos/200" },
+      { color_code: "#669A33", image: "https://picsum.photos/200" },
+      { color_code: "#7E8DBF", image: "https://picsum.photos/200" },
+      { color_code: "#E75937", image: "https://picsum.photos/200" },
     ],
   },
 
