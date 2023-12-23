@@ -1,10 +1,10 @@
 import useProducts from "@/hooks/useProducts";
 import { useState, useEffect, useRef } from "react";
 import { PAGE_MODES } from "@/data/enums";
-import Header from "./Header";
-import ProductsDisplay from "./ProductsDisplay";
-import ColorPicker from "./ColorPicker";
-import CheckoutProduct from "./CheckoutProduct";
+import Header from "./subComponents/Header";
+import ProductsDisplay from "./subComponents/ProductsDisplay";
+import ColorPicker from "./subComponents/ColorPicker";
+import CheckoutProduct from "./subComponents/CheckoutProduct";
 
 
 export default function ProductPicker() {
