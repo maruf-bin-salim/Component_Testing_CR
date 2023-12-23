@@ -8,11 +8,9 @@ export default function ColorPicker({
   setSelectedProduct,
 }) {
   return (
-    <div className="mt-4 flex h-[min-content] max-h-[90%] w-full flex-col">
-      <div>
-        <p className="mt-8">Select A Product Color</p>
-      </div>
-      <div className="scrollbar-hidden flex flex-[1] flex-col overflow-y-scroll bg-[#F5F5F5]">
+    <div className="flex h-[min-content] max-h-[90%] w-full flex-col">
+      <p className="">Select A Product Color</p>
+      <div className="scrollbar-hidden mt-2 flex flex-[1] flex-col overflow-y-scroll bg-[#F5F5F5]">
         {/* top portion */}
         <div className="flex min-h-[max-content] p-2">
           <div className="flex flex-1 flex-col">
@@ -79,7 +77,7 @@ export default function ColorPicker({
               setSelectedColor(null);
               setPageMode(PAGE_MODES.PRODUCT_CHECKOUT);
             }}
-            className="text-[#a1b5ff] cursor-pointer"
+            className="cursor-pointer text-[#a1b5ff]"
           >
             Maybe Later
           </p>
@@ -88,4 +86,3 @@ export default function ColorPicker({
     </div>
   );
 }
-

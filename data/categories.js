@@ -1,5 +1,3 @@
-import ProductPicker from "@/components/ProductPicker";
-
 const categories = [
   {
     name: "Pick A category",
