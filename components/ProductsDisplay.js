@@ -86,7 +86,7 @@ export default function ProductsDisplay({
             }}
             className="m-2 cursor-pointer p-4 text-center"
           >
-            Load More ...{" "}
+            {"Click To Load More"}
           </p>
         )}
       </div>
